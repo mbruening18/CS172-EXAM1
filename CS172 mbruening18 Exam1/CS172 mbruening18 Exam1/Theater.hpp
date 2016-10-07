@@ -23,15 +23,13 @@ class Theater
 private:
     string NameOfTheater;
     string PhoneNumberOfTheater;
-    int PopcornPrice;
-    int CokePrice;
+    int PriceOfPopcorn;
+    int PriceOfCoke;
     
 public:
     
-    //Constructor function
     Theater(string Name, string Phone);
-    
-    //Blueprint of member functions
+
     void AddMovie(Movie& Movie);
     string GetMovieForHour(int Hour, Movie Movie[11]) const;
     int GetShowTimeForGenre(string Genre, Movie Movie[11]) const;

@@ -7,8 +7,6 @@
 //
 
 #include "Theater.hpp"
-
-#include "Theater.hpp"
 #include "Movie.hpp"
 #include <string>
 using namespace std;
@@ -39,26 +37,24 @@ string Theater::GetMovieForHour(int Hour, Movie Movie[11]) const
     return "";
 }
 
-
 int Theater::GetShowTimeForGenre(string Genre, Movie Movie[11]) const
 {
-    for(int i=0; i<11; i++) {
+    for(int i=0; i<11; i++)
+    {
         if(Genre == Movie[i].GetGenre())
-            return Movie[i].GetShowtime();
+        return Movie[i].GetShowtime();
     }
     return -1;
 }
 
-
 int Theater::GetPopcornPrice()
 {
-    PopcornPrice = 7;
-    return PopcornPrice;
+    PriceOfPopcorn = 7;
+    return PriceOfPopcorn;
 }
-
 
 int Theater::GetCokePrice()
 {
-    CokePrice = 3;
-    return CokePrice;
+    PriceOfCoke = 3;
+    return PriceOfCoke;
 }

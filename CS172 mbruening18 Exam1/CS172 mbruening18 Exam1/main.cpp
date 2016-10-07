@@ -17,8 +17,8 @@
 
 using namespace std;
 
-
-int main() {
+int main()
+{
     const int MOVIECOUNT = 11;
     Movie movieListing[] = {
         Movie("Bull Durham", "Comedy", 0), Movie("Ocean's Eleven", "Action", 2),
@@ -28,29 +28,33 @@ int main() {
         Movie("Monte Python's Meaning of Life", "Comedy", 19), Movie("Jaws", "Horror", 21),
         Movie("Usual Suspects", "Action", 23),
     };
+    
     Theater garland("The Garland", "509-327-2509");
-    for (int m = 0; m < MOVIECOUNT; m++)
-    {
+    for (int m = 0; m < MOVIECOUNT; m++) {
         garland.AddMovie(movieListing[m]);
     }
+
     int errors = 0;
-    if (garland.GetMovieForHour(-1) != "") {
+    if (garland.GetMovieForHour(-1, movieListing) != "") {
         errors++;
         cout << "error: not handling -1 correctly\n";
     }
-    if (garland.GetMovieForHour(25) != "") {
+    if (garland.GetMovieForHour(25, movieListing) != "") {
         errors++;
         cout << "error: not handling 25 correctly\n";
     }
-    if (garland.GetMovieForHour(19) != "Monte Python's Meaning of Life") {
+    if (garland.GetMovieForHour(19, movieListing) != "Monte Python's Meaning of Life") {
         errors++;
-        cout << "error: incorrect movie for 18th hour\n";
+        cout << "error: incorrect movie for 19th hour\n";
     }
-    }
-    if (garland.GetShowTimeForGenre("Comedy") != 0) {
+    
+    if (garland.GetShowTimeForGenre("Comedy", movieListing) != 0) {
         errors++;
         cout << "error: incorrect Comedy\n";
     }
+    
     if (errors == 0) cout << "Passed\n";
     else cout << "Errors: " << errors << endl;
+    
+    return 0;
 }
