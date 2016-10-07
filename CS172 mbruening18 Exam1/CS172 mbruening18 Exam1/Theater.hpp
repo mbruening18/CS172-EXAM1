@@ -20,18 +20,23 @@ using namespace std;
 
 #include <stdio.h>
 
+//Establishes class Theater
 class Theater
 {
+//Makes the following functions private
 private:
     string NameOfTheater;
     string PhoneNumberOfTheater;
     int PriceOfPopcorn;
     int PriceOfCoke;
     
+//Makes the following functions public
 public:
     
+    //Constructor that strings name and phone
     Theater(string Name, string Phone);
 
+    //Functions
     void AddMovie(Movie& Movie);
     string GetMovieForHour(int Hour, Movie Movie[11]) const;
     int GetShowTimeForGenre(string Genre, Movie Movie[11]) const;

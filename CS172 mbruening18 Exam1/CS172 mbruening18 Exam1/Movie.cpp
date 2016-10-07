@@ -10,33 +10,39 @@
 
 #include "Movie.hpp"
 
-//Come up with a default movie for your theater
+//No-argument constructor
+//returns default movie for theater
 Movie::Movie()
 {
     TitleOfMovie = "RED";
     GenreOfMovie = "Action";
-    ShowtimeOfMovie = 0;
+    ShowtimeOfMovie = 2;
 }
 
-Movie::Movie(string Title, string Genre, int ShowTime)// for Genre, only Action, Comedy, Horror, and Documentary. If none of those,
-                                                      // default to Comedy
+//Constuctor
+// for Genre, only Action, Comedy, Horror, and Documentary. If none of those, default to Comedy
+Movie::Movie(string Title, string Genre, int ShowTime)
+
 {
     TitleOfMovie = Title;
     GenreOfMovie = Genre;
     ShowtimeOfMovie = ShowTime;
 }
 
-string Movie::GetTitle() const// Returns the movie title
+ //Gets and returns the movie title
+string Movie::GetTitle() const
 {
     return TitleOfMovie;
 }
 
-string Movie::GetGenre() const // Returns the movie genre
+ //Gets and returns the movie Genre
+string Movie::GetGenre() const
 {
     return GenreOfMovie;
 }
 
-int Movie::GetShowtime() const // When is this movie shown?
+ //Gets and returns the showtime for the movie
+int Movie::GetShowtime() const
 {
     return ShowtimeOfMovie;
 }

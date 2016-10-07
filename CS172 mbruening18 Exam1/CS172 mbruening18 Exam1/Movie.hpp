@@ -19,22 +19,30 @@
 
 using namespace std;
 
+//Establishes class Movie
 class Movie
 {
+//Makes the following functions private
 private:
     string TitleOfMovie;
     string GenreOfMovie;
     int ShowtimeOfMovie;
+    
+    //Makes the following functions public
 public:
-    //Come up with a default movie for your theater
+    // consturctor that takes no argument function
+    //Makes default movie for theater
     Movie();
-    // for Genre, only Action, Comedy, Horror, and Documentary. If none of those,
-    // default to Comedy
+    
+   //Consturctor function
     Movie(string Title, string Genre, int ShowTime);
     
-    string GetTitle()const; // Returns the movie title
-    string GetGenre()const; // Returns the movie genre
-    int GetShowtime()const; // When is this movie shown?
+    //Gets and returns the movie title
+    string GetTitle()const;
+    //Gets and returns the movie genre
+    string GetGenre()const;
+    // Gets and returns the showtime of the Movie
+    int GetShowtime()const;
 };
 
 #endif /* Movie_hpp */
