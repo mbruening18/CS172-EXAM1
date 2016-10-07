@@ -20,9 +20,9 @@ using namespace std;
 class Movie
 {
 private:
-    string Title;
-    string Genre;
-    int Showtime;
+    string TitleOfMovie;
+    string GenreOfMovie;
+    int ShowtimeOfMovie;
 public:
     //Come up with a default movie for your theater
     Movie();
@@ -30,9 +30,9 @@ public:
     // default to Comedy
     Movie(string Title, string Genre, int ShowTime);
     
-    string GetTitle(); // Returns the movie title
-    string GetGenre(); // Returns the movie genre
-    int GetShowtime(); // When is this movie shown?
+    string GetTitle()const; // Returns the movie title
+    string GetGenre()const; // Returns the movie genre
+    int GetShowtime()const; // When is this movie shown?
 };
 
 #endif /* Movie_hpp */

@@ -8,28 +8,57 @@
 
 #include "Theater.hpp"
 
-Theater::Theater(string Name, string Phone)//The name for this theater
+#include "Theater.hpp"
+#include "Movie.hpp"
+#include <string>
+using namespace std;
+
+
+Theater::Theater(string Name, string Phone)
 {
-    
+    NameOfTheater = Name;
+    PhoneNumberOfTheater = Phone;
 }
 
-void Theater::AddMovie(Movie& Movie)//Add a movie at a specific time
+void Theater::AddMovie(Movie& Movie)
 {
-    
-}
-string Theater::GetMovieForHour(int Hour)//Return the movie shown at or after the given hour
-{
-    
+    Movie::Movie(Movie.GetTitle(), Movie.GetGenre(), Movie.GetShowtime());
 }
 
-//   Return "" if none are upcoming
-
-int Theater:: GetShowTimeForGenre(string Genre)//When will the movie of the given genre be shown?
-                                               //   Return -1 if none exist
-
+string Theater::GetMovieForHour(int Hour, Movie Movie[11]) const
 {
-    
+    for(int i=0; i < 11; i++)
+    {
+        if(Hour == Movie[i].GetShowtime())
+        {
+            string s = Movie[i].GetTitle();
+            return s;
+            break;
+        }
+    }
+    return "";
 }
 
-int GetPopcornPrice() //Make up a cost in dollars for popcorn int GetCokePrice();
-                      //Make up a cost on Coke
+
+int Theater::GetShowTimeForGenre(string Genre, Movie Movie[11]) const
+{
+    for(int i=0; i<11; i++) {
+        if(Genre == Movie[i].GetGenre())
+            return Movie[i].GetShowtime();
+    }
+    return -1;
+}
+
+
+int Theater::GetPopcornPrice()
+{
+    PopcornPrice = 7;
+    return PopcornPrice;
+}
+
+
+int Theater::GetCokePrice()
+{
+    CokePrice = 3;
+    return CokePrice;
+}

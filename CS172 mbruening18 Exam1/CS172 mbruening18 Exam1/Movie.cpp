@@ -11,28 +11,30 @@
 //Come up with a default movie for your theater
 Movie::Movie()
 {
-    return 0;
+    TitleOfMovie = "RED";
+    GenreOfMovie = "Action";
+    ShowtimeOfMovie = 0;
 }
 
-// for Genre, only Action, Comedy, Horror, and Documentary. If none of those,
-// default to Comedy
-
-Movie::Movie(string Title, string Genre, int ShowTime)
+Movie::Movie(string Title, string Genre, int ShowTime)// for Genre, only Action, Comedy, Horror, and Documentary. If none of those,
+                                                      // default to Comedy
 {
-    
+    TitleOfMovie = Title;
+    GenreOfMovie = Genre;
+    ShowtimeOfMovie = ShowTime;
 }
 
-string Movie::GetTitle() // Returns the movie title
+string Movie::GetTitle() const// Returns the movie title
 {
-    return Movie;
+    return TitleOfMovie;
 }
 
-string Movie::GetGenre() // Returns the movie genre
+string Movie::GetGenre() const // Returns the movie genre
 {
-    return Genre;
+    return GenreOfMovie;
 }
 
-int Movie::GetShowtime() // When is this movie shown?
+int Movie::GetShowtime() const // When is this movie shown?
 {
-    return Showtime;
+    return ShowtimeOfMovie;
 }

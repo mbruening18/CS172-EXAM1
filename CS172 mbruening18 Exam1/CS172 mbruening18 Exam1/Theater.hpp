@@ -13,6 +13,7 @@
 #include <cmath>
 #include <string>
 #include <ctime>
+#include "Movie.hpp"
 using namespace std;
 
 #include <stdio.h>
@@ -20,21 +21,23 @@ using namespace std;
 class Theater
 {
 private:
-    string Name;
-    string Phone;
+    string NameOfTheater;
+    string PhoneNumberOfTheater;
+    int PopcornPrice;
+    int CokePrice;
     
 public:
-    Theater(string Name, string Phone); //The name for this theater
     
-    void AddMovie(Movie& Movie); //Add a movie at a specific time
-    string GetMovieForHour(int Hour); //Return the movie shown at or after the given hour
-                                      //   Return "" if none are upcoming
+    //Constructor function
+    Theater(string Name, string Phone);
     
-    int GetShowTimeForGenre(string Genre);//When will the movie of the given genre be shown?
-                                          //   Return -1 if none exist
+    //Blueprint of member functions
+    void AddMovie(Movie& Movie);
+    string GetMovieForHour(int Hour, Movie Movie[11]) const;
+    int GetShowTimeForGenre(string Genre, Movie Movie[11]) const;
+    int GetPopcornPrice();
+    int GetCokePrice();
     
-    int GetPopcornPrice(); //Make up a cost in dollars for popcorn int GetCokePrice();
-                           //Make up a cost on Coke
 };
-
+    
 #endif /* Theater_hpp */
